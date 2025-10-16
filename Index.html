@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patelson & Company | Develop, Modify, Replicate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script type="module">
+        import { createIcons, Search, Settings, Edit3, Repeat2, Factory, Phone, Mail, Sparkles } from 'https://cdn.jsdelivr.net/npm/lucide@latest/dist/esm/lucide.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            createIcons({
+                icons: { Search, Settings, Edit3, Repeat2, Factory, Phone, Mail, Sparkles }
+            });
+        });
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* Dark charcoal background */
+            color: #e5e7eb; /* Light gray text */
+            scroll-behavior: smooth;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at center, rgba(30, 41, 59, 0.5) 0%, rgba(13, 17, 23, 1) 70%);
+        }
+        /* Custom scrollbar for aesthetic purposes */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f2937;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0d1117;
+        }
+        .loader {
+            border: 4px solid #1f2937;
+            border-top: 4px solid #06b6d4; /* cyan-500 */
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            <a href="#" class="text-xl font-bold tracking-widest text-cyan-400">PATELSON & CO.</a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#services" class="hover:text-cyan-400 transition duration-300">Services</a>
+                <a href="#portfolio" class="hover:text-cyan-400 transition duration-300">Portfolio</a>
+                <a href="#process" class="hover:text-cyan-400 transition duration-300">The Process</a>
+                <a href="#contact" class="hover:text-cyan-400 transition duration-300">Contact</a>
+            </div>
+            <a href="#quote" class="px-4 py-2 bg-cyan-600 text-gray-900 text-sm font-semibold rounded-lg hover:bg-cyan-500 transition duration-300 shadow-lg hidden sm:block">
+                Request a Quote
+            </a>
+            <button class="md:hidden text-gray-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-gradient pt-16 md:pt-24 pb-16 min-h-screen flex items-center justify-center">
+            <div class="max-w-5xl mx-auto px-4 text-center">
+                <p class="text-xs sm:text-sm text-cyan-400 font-medium tracking-widest uppercase mb-4">
+                    Develop, Modify, Replicate
+                </p>
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-8">
+                    Engineering the Future of Industry.
+                </h1>
+                <p class="text-base sm:text-xl text-gray-400 max-w-3xl mx-auto mb-12">
+                    Patelson & Company specializes in the **design, build, and optimization** of custom industrial machines, delivering high-precision solutions from concept to final production for global B2B clients.
+                </p>
+
+                <a href="#quote" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-semibold rounded-xl text-gray-900 bg-white hover:bg-gray-200 transition duration-300 shadow-2xl shadow-cyan-900/50 transform hover:scale-[1.02]">
+                    Start Your Custom Project
+                    <svg data-lucide="Factory" class="ml-3 w-5 h-5"></svg>
+                </a>
+            </div>
+        </section>
+
+        <section id="trust" class="bg-gray-900 py-12 border-t border-b border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-xl font-semibold text-gray-500 mb-8">Partners in Precision Engineering Across Key Industries</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
+                    <div class="text-gray-400 hover:text-white transition duration-300 transform hover:-translate-y-1">Pharma</div>
+                    <div class="text-gray-400 hover:text-white transition duration-300 transform hover:-translate-y-1">Chemical</div>
+                    <div class="text-gray-400 hover:text-white transition duration-300 transform hover:-translate-y-1">Food Processing</div>
+                    <div class="text-gray-400 hover:text-white transition duration-300 transform hover:-translate-y-1">Paper & Pouches</div>
+                    <div class="text-gray-400 hover:text-white transition duration-300 transform hover:-translate-y-1">Architecture</div>
+                    <div class="text-gray-400 hover:text-white transition duration-300 transform hover:-translate-y-1">Sheet Metal</div>
+                    <div class="text-gray-400 hover:text-white transition duration-300 transform hover:-translate-y-1">Startups</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-24">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-4xl font-bold mb-4 text-center">Our Core Capabilities</h2>
+                <p class="text-lg text-gray-400 text-center max-w-2xl mx-auto mb-16">
+                    From initial concept to optimizing existing lines, our services are built around your success and governed by stringent **international standards**.
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-8 border border-gray-800 rounded-xl bg-gray-800/50 hover:bg-gray-800 transition duration-500 group">
+                        <svg data-lucide="Settings" class="w-10 h-10 text-cyan-400 mb-4 group-hover:scale-110 transition duration-500"></svg>
+                        <h3 class="text-2xl font-semibold mb-3">Develop & Design</h3>
+                        <p class="text-gray-400 mb-4">
+                            Custom machine design, prototyping, and tooling for innovative products and processes, ensuring functional excellence from scratch.
+                        </p>
+                        <a href="#" class="text-cyan-400 font-medium text-sm inline-flex items-center group-hover:text-white transition duration-300">
+                            Explore Custom Solutions &rarr;
+                        </a>
+                    </div>
+
+                    <div class="p-8 border border-gray-800 rounded-xl bg-gray-800/50 hover:bg-gray-800 transition duration-500 group">
+                        <svg data-lucide="Edit3" class="w-10 h-10 text-pink-400 mb-4 group-hover:scale-110 transition duration-500"></svg>
+                        <h3 class="text-2xl font-semibold mb-3">Modify & Optimize</h3>
+                        <p class="text-gray-400 mb-4">
+                            Modification, optimization, and site adjustments for existing machinery to drastically improve efficiency, throughput, and product quality.
+                        </p>
+                        <a href="#" class="text-pink-400 font-medium text-sm inline-flex items-center group-hover:text-white transition duration-300">
+                            Improve Existing Systems &rarr;
+                        </a>
+                    </div>
+
+                    <div class="p-8 border border-gray-800 rounded-xl bg-gray-800/50 hover:bg-gray-800 transition duration-500 group">
+                        <svg data-lucide="Repeat2" class="w-10 h-10 text-yellow-400 mb-4 group-hover:scale-110 transition duration-500"></svg>
+                        <h3 class="text-2xl font-semibold mb-3">Replicate & Reverse Engineer</h3>
+                        <p class="text-gray-400 mb-4">
+                            Precision replication and reverse engineering of critical parts or full machines, guaranteeing operational continuity and scale.
+                        </p>
+                        <a href="#" class="text-yellow-400 font-medium text-sm inline-flex items-center group-hover:text-white transition duration-300">
+                            View Replication Services &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="py-24 bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-sm font-semibold uppercase tracking-wider text-cyan-400">Visual Proof</span>
+                    <h2 class="text-4xl font-bold mt-2 mb-4">See the Engineering Difference.</h2>
+                    <p class="text-gray-400 mb-8">
+                        Our portfolio showcases detailed case studies—including 3D models and **before-and-after** visual comparisons—proving our ability to solve the most complex industrial challenges.
+                    </p>
+                    <a href="#" class="px-6 py-3 border border-cyan-600 text-cyan-400 text-sm font-semibold rounded-lg hover:bg-cyan-600 hover:text-white transition duration-300">
+                        View Full Portfolio
+                    </a>
+                </div>
+                <div class="aspect-video bg-gray-800 rounded-xl shadow-2xl flex items-center justify-center">
+                    <span class="text-gray-500 italic">Interactive 3D Model Viewer Placeholder</span>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="quote" class="py-24">
+            <div class="max-w-4xl mx-auto px-4 bg-gray-800/50 p-10 rounded-xl border border-gray-700 shadow-xl">
+                <h2 class="text-3xl font-bold text-center mb-2">Ready to Scale?</h2>
+                <p class="text-lg text-gray-400 text-center mb-8">
+                    Tell us about your next project to receive a detailed, customized project plan and quotation.
+                </p>
+
+                <form id="quoteForm" onsubmit="event.preventDefault(); showThankYou();" class="space-y-6">
+                    <div>
+                        <label for="company" class="block text-sm font-medium text-gray-300 mb-1">Company Name</label>
+                        <input type="text" id="company" required class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:ring-cyan-500 focus:border-cyan-500 text-white">
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
+                            <input type="email" id="email" required class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:ring-cyan-500 focus:border-cyan-500 text-white">
+                        </div>
+                        <div>
+                            <label for="project_type" class="block text-sm font-medium text-gray-300 mb-1">Project Type</label>
+                            <select id="project_type" required class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:ring-cyan-500 focus:border-cyan-500 text-white appearance-none">
+                                <option value="" disabled selected>Select an option</option>
+                                <option value="design">Custom Machine Design & Build</option>
+                                <option value="replication">Replication / Reverse Engineering</option>
+                                <option value="optimization">Modification & Optimization</option>
+                                <option value="tooling">Dies & Tooling Design</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="details" class="block text-sm font-medium text-gray-300 mb-1">Raw Project Idea/Details (What is the machine, goal, or problem?)</label>
+                        <textarea id="details" rows="4" required maxlength="500" class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:ring-cyan-500 focus:border-cyan-500 text-white" placeholder="Example: Need a new machine that can fold cardboard boxes 30% faster than our current process. It needs to handle three different box sizes."></textarea>
+                    </div>
+
+                    <button type="button" id="refineButton" onclick="refineProjectBrief()" class="w-full inline-flex items-center justify-center px-4 py-3 border border-cyan-500 text-sm font-semibold rounded-lg text-cyan-400 bg-gray-700 hover:bg-gray-600 transition duration-300">
+                        <div id="refineLoader" class="hidden loader mr-2"></div>
+                        <svg data-lucide="Sparkles" id="refineIcon" class="w-4 h-4 mr-2"></svg>
+                        <span id="refineText">Refine Project Brief for Engineering Review (AI Powered)</span>
+                    </button>
+
+                    <div id="refinedBriefOutput" class="hidden mt-4">
+                        <label class="block text-sm font-medium text-gray-300 mb-1">Refined Engineering Brief</label>
+                        <textarea id="refinedDetails" rows="6" readonly class="w-full px-4 py-3 rounded-lg bg-gray-900 border border-cyan-500 text-white text-sm cursor-text"></textarea>
+                        <p class="text-xs text-gray-500 mt-2">
+                            This refined brief is optimized for our engineering team. **NOTE:** This button is currently a mock-up. You will need to implement a secure server-side endpoint (like a serverless function) to make the live AI call.
+                        </p>
+                    </div>
+
+                    <button type="submit" id="submitButton" class="w-full px-6 py-4 border border-transparent text-lg font-semibold rounded-xl text-gray-900 bg-cyan-600 hover:bg-cyan-500 transition duration-300 shadow-xl shadow-cyan-900/50">
+                        Submit Project for Quote
+                    </button>
+
+                    <div id="successMessage" class="hidden mt-4 p-4 text-center bg-green-900 border border-green-700 text-green-300 rounded-lg">
+                        Thank you! Your project details have been successfully submitted. We will review your request and be in touch within 24 hours.
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contact" class="bg-gray-900 border-t border-gray-800 py-16">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-12 text-sm">
+
+            <div>
+                <h3 class="text-xl font-bold tracking-widest text-cyan-400 mb-4">PATELSON & CO.</h3>
+                <p class="text-gray-400 mb-4">Engineering excellence governed by international standards.</p>
+                <div class="text-gray-500">&copy; 2024 Patelson & Company.</div>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-semibold text-white mb-4">Explore</h4>
+                <ul class="space-y-2">
+                    <li><a href="#services" class="text-gray-400 hover:text-cyan-400 transition">Services Overview</a></li>
+                    <li><a href="#portfolio" class="text-gray-400 hover:text-cyan-400 transition">Case Studies</a></li>
+                    <li><a href="#process" class="text-gray-400 hover:text-cyan-400 transition">Our Process</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-cyan-400 transition">About Us</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-semibold text-white mb-4">Get In Touch</h4>
+                <ul class="space-y-3">
+                    <li class="flex items-center">
+                        <svg data-lucide="Mail" class="w-4 h-4 text-cyan-400 mr-3"></svg>
+                        <a href="mailto:sales@patelson.com" class="text-gray-400 hover:text-cyan-400 transition">sales@patelson.com</a>
+                    </li>
+                    <li class="flex items-center">
+                        <svg data-lucide="Phone" class="w-4 h-4 text-cyan-400 mr-3"></svg>
+                        <a href="tel:+15551234567" class="text-gray-400 hover:text-cyan-400 transition">+1 (555) 123-4567</a>
+                    </li>
+                    <li class="text-gray-400">Global Operations Center</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-semibold text-white mb-4">Start Now</h4>
+                <p class="text-gray-400 mb-4">Don't wait. Send us your project requirements today.</p>
+                <a href="#quote" class="px-6 py-3 border border-transparent text-sm font-semibold rounded-lg text-gray-900 bg-white hover:bg-gray-200 transition duration-300">
+                    Request a Quote
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        // CRITICAL SECURITY FIX: The API key is removed from the client-side code.
+        // We now target a hypothetical secure endpoint:
+        const apiUrl = '/api/refine-project';
+
+        // --- MOCKING API FUNCTIONS FOR TESTING ---
+        // You MUST replace this 'mockedRefineProjectBrief' with a real server-side fetch
+        // to a secure endpoint that calls the Gemini API (See Step 1 in the previous response).
+        function mockedRefineProjectBrief(rawDetails) {
+            return new Promise(resolve => {
+                // Simulate network latency and processing time
+                setTimeout(() => {
+                    const mockOutput = `1. PROJECT GOAL: Automate the packaging line to achieve a 30% increase in folding throughput for consumer goods.
+2. FUNCTIONAL REQUIREMENT: The new system must handle three distinct box formats (A, B, C) and require less than 5 minutes for tooling changeover.
+3. CHALLENGE/CONTEXT: Current process relies on manual folding which is the primary bottleneck for scaling production. Must integrate seamlessly with existing sealing machinery.
+4. KEY METRICS: Target throughput of 50 boxes per minute minimum, with a material waste rate below 1%.`;
+                    resolve(mockOutput);
+                }, 2000); // 2 second delay for realistic user experience
+            });
+        }
+        // ----------------------------------------
+
+
+        function showThankYou() {
+            const successMsg = document.getElementById('successMessage');
+            document.getElementById('quoteForm').classList.add('hidden');
+            successMsg.classList.remove('hidden');
+            document.getElementById('quote').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        async function refineProjectBrief() {
+            const rawDetails = document.getElementById('details').value;
+            const refineButton = document.getElementById('refineButton');
+            const refineLoader = document.getElementById('refineLoader');
+            const refineIcon = document.getElementById('refineIcon');
+            const refineText = document.getElementById('refineText');
+            const refinedBriefOutput = document.getElementById('refinedBriefOutput');
+            const refinedDetails = document.getElementById('refinedDetails');
+
+            if (rawDetails.length < 20) {
+                alert('Please provide a few more details (at least 20 characters) about your project before refining.');
+                return;
+            }
+
+            // 1. Show Loading State
+            refineButton.disabled = true;
+            refineIcon.classList.add('hidden');
+            refineLoader.classList.remove('hidden');
+            refineText.textContent = 'Refining...';
+
+            try {
+                // In a live environment, this would be an actual fetch to your secure server endpoint:
+                // const response = await fetch(apiUrl, { method: 'POST', body: JSON.stringify({ rawDetails }) });
+                // const result = await response.json();
+                // const text = result.refinedText;
+
+                // USING THE MOCK FUNCTION FOR DEMONSTRATION:
+                const text = await mockedRefineProjectBrief(rawDetails);
+                
+                if (text) {
+                    refinedDetails.value = text.trim();
+                    refinedBriefOutput.classList.remove('hidden');
+                    
+                    // Replace raw details with refined text for submission
+                    document.getElementById('details').value = text.trim(); 
+                } else {
+                    // Handle case where serverless function fails or returns empty
+                    alert('Could not refine the brief. Please try again or submit your raw details.');
+                }
+
+            } catch (error) {
+                console.error('Error during secure API call simulation:', error);
+                alert('A network or API error occurred. Please check the console for details or submit your raw text directly.');
+            } finally {
+                // 3. Restore Button State
+                refineButton.disabled = false;
+                refineLoader.classList.add('hidden');
+                refineIcon.classList.remove('hidden');
+                refineText.textContent = 'Refine Project Brief for Engineering Review (AI Powered)';
+            }
+        }
+    </script>
+</body>
+</html>
